@@ -1,1 +1,2 @@
-yarn lint-staged --verbose
+yarn lint-staged --verbosenpm test
+npm run lint-staged

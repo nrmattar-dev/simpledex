@@ -1,9 +1,5 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
-import deployTokenA from "./01_deploy_token_a";
-import deployTokenB from "./02_deploy_token_b";
-
-
 
 /**
  * Deploys a contract named "SimpleDEX" using the deployer account and
@@ -25,8 +21,6 @@ const deploySimpleDEX: DeployFunction = async function (hre: HardhatRuntimeEnvir
     
   const { deployer } = await hre.getNamedAccounts();
   const { deploy } = hre.deployments;
-
-  console.log(deployTokenA.name);
 
   await deploy("SimpleDEX", {
     from: deployer,
