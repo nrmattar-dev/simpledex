@@ -8,7 +8,6 @@ import { DeployFunction } from "hardhat-deploy/types";
  * @param hre HardhatRuntimeEnvironment object.
  */
 const deployTokenB: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
-
   const { deployer } = await hre.getNamedAccounts();
   const { deploy } = hre.deployments;
 
@@ -24,7 +23,6 @@ const deployTokenB: DeployFunction = async function (hre: HardhatRuntimeEnvironm
 
   console.log("Token B OK");
 };
-
 
 export default deployTokenB;
 deployTokenB.tags = ["TokenB"];
