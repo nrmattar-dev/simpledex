@@ -14,7 +14,7 @@ const deploySimpleDEX: DeployFunction = async function (hre: HardhatRuntimeEnvir
   await deploy("SimpleDEX", {
     from: deployer,
     // Contract constructor arguments
-    args: ["0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512","0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0"],
+    args: ["0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512", "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0"],
     log: true,
     // autoMine: can be passed to the deploy function to make the deployment process faster on local networks by
     // automatically mining the contract deployment transaction. There is no effect on live networks.
