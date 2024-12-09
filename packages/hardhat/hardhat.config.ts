@@ -107,7 +107,8 @@ const config: HardhatUserConfig = {
       accounts: [deployerPrivateKey],
     },
     scrollSepolia: {
-      url: "https://sepolia-rpc.scroll.io",
+      //url: "https://sepolia-rpc.scroll.io",
+      url: "https://endpoints.omniatech.io/v1/scroll/sepolia/public",
       accounts: [deployerPrivateKey],
     },
     scroll: {
