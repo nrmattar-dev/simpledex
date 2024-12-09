@@ -35,25 +35,22 @@ export default deploySimpleDEX;
 // e.g. yarn deploy --tags SimpleDEX
 deploySimpleDEX.tags = ["SimpleDEX"];
 
-
 function getTokenAddresses(): { TokenA: string; TokenB: string } | null {
   try {
-    
-
     //31337 > Local
     //534351 > Scroll Sepolia
-    const networkId = 534351; 
-    
+    const networkId = 534351;
+
     const tokenAAddress = deployedContracts[networkId]?.TokenA?.address;
     const tokenBAddress = deployedContracts[networkId]?.TokenB?.address;
-    
+
     if (!tokenAAddress || !tokenBAddress) {
-      throw new Error('Las direcciones de TokenA o TokenB no están definidas.');
+      throw new Error("Las direcciones de TokenA o TokenB no están definidas.");
     }
 
     return {
       TokenA: tokenAAddress,
-      TokenB: tokenBAddress
+      TokenB: tokenBAddress,
     };
   } catch (error) {
     if (error instanceof Error) {
@@ -61,7 +58,7 @@ function getTokenAddresses(): { TokenA: string; TokenB: string } | null {
     } else {
       console.error("An unknown error occurred");
     }
-    
+
     // Retornamos null en caso de error
     return null;
   }
