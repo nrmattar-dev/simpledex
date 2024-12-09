@@ -1,6 +1,7 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
-import deployedContracts from "../../nextjs/contracts/deployedcontracts";
+import deployedContracts from "../../nextjs/contracts/deployedContracts";
+
 /**
  * Deploys a contract named "SimpleDEX" using the deployer account and
  * constructor arguments set to the deployer address
