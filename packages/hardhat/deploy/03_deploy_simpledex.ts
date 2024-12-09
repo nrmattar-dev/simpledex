@@ -1,6 +1,6 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
-import deployedContracts from '../../nextjs/contracts/deployedcontracts';
+import deployedContracts from "../../nextjs/contracts/deployedcontracts";
 /**
  * Deploys a contract named "SimpleDEX" using the deployer account and
  * constructor arguments set to the deployer address
@@ -37,14 +37,15 @@ deploySimpleDEX.tags = ["SimpleDEX"];
 
 function getTokenAddresses(): { TokenA: string; TokenB: string } | null {
   try {
-    // Comprobamos si las direcciones existen en el objeto
-    const networkId = 31337; // Puede ser modificado según la red que estás utilizando
+    
 
-    // Acceso a las direcciones de los tokens
+    //31337 > Local
+    //534351 > Scroll Sepolia
+    const networkId = 534351; 
+    
     const tokenAAddress = deployedContracts[networkId]?.TokenA?.address;
     const tokenBAddress = deployedContracts[networkId]?.TokenB?.address;
     
-    // Validamos que las direcciones estén definidas
     if (!tokenAAddress || !tokenBAddress) {
       throw new Error('Las direcciones de TokenA o TokenB no están definidas.');
     }
@@ -54,7 +55,6 @@ function getTokenAddresses(): { TokenA: string; TokenB: string } | null {
       TokenB: tokenBAddress
     };
   } catch (error) {
-    // Afirmación de tipo de 'error' como 'Error'
     if (error instanceof Error) {
       console.error("Error fetching contract addresses:", error.message);
     } else {

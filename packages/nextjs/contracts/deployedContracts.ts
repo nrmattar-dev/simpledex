@@ -1138,7 +1138,7 @@ const deployedContracts = {
   },
   534351: {
     SimpleDEX: {
-      address: "0x85367A0289Ea02B6c4CAcF6A5fC0A07352b3D604",
+      address: "0xcd29aAA74d0B415F616cF88a1EfCc5BdB0da67d2",
       abi: [
         {
           inputs: [
