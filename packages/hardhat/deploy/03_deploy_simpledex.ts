@@ -11,6 +11,11 @@ import deployedContracts from "../../nextjs/contracts/deployedContracts";
 const deploySimpleDEX: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   const { deployer } = await hre.getNamedAccounts();
   const { deploy } = hre.deployments;
+
+  /*
+  Creo una función para que levante los addreses de los token A y B (que se deployan en los pasos previos) y cuya información se guarda
+  en /nextjs/contracts/deployedContracts para pasarselo como parámetro al contrato de SimpleDex y automatizar el proceso
+  */
   const addresses = getTokenAddresses();
 
   console.log("Se rescata el Token A: " + addresses?.TokenA);
@@ -37,8 +42,8 @@ deploySimpleDEX.tags = ["SimpleDEX"];
 
 function getTokenAddresses(): { TokenA: string; TokenB: string } | null {
   try {
-    //31337 > Local
-    //534351 > Scroll Sepolia
+    //Si estoy haciendo el deploy en Hardhat (Local) va: 31337
+    //Si estoy haciendo el deploy en Scroll Sepolia va: 534351
     const networkId = 534351;
 
     const tokenAAddress = deployedContracts[networkId]?.TokenA?.address;
