@@ -44,7 +44,7 @@ function getTokenAddresses(): { TokenA: string; TokenB: string } | null {
   try {
     //Si estoy haciendo el deploy en Hardhat (Local) va: 31337
     //Si estoy haciendo el deploy en Scroll Sepolia va: 534351
-    const networkId = 534351;
+    const networkId = 31337;
 
     const tokenAAddress = deployedContracts[networkId]?.TokenA?.address;
     const tokenBAddress = deployedContracts[networkId]?.TokenB?.address;
